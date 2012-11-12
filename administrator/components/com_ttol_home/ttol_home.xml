@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: ttol_home.xml 22551 2011-12-18 17:56:18Z github_bot $ -->
+<extension type="component" version="2.5" method="upgrade">
+	<name>Component: TTOL Homepage</name>
+	<author>TTOL Team</author>
+	<creationDate>Jan 2012</creationDate>
+	<copyright>(C) 2005 - 2011 Open Source Matters. All rights reserved.	</copyright>
+	<license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
+	<authorEmail>contact@thongtinonline.net</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>1.7.0</version>
+	<description>Com to set homepage</description>
+
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>metadata.xml</filename>
+		<filename>ttol_home.php</filename>
+		<filename>router.php</filename>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+	<administration>
+		<menu img="class:ttol_home">com_ttol_home</menu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>ttol_home.php</filename>
+			<folder>controllers</folder>
+			<folder>elements</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+	</administration>
+</extension>
+
