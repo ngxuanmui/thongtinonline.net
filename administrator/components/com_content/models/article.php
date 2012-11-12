@@ -627,7 +627,7 @@ class ContentModelArticle extends JModelAdmin
 		$dest = JPATH_ROOT . DS . 'images' . DS . 'com_content' . DS . 'thumbs' . DS . $date . DS . $itemId . DS;
 		
 		// Make directory
-		@mkdir($dest, '0777', true);
+		@mkdir($dest, 0777, true);
 		
 		if (isset($fileName) && $fileName) {
 			
