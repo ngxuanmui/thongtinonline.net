@@ -501,6 +501,9 @@ class ContentModelArticle extends JModelAdmin
 			
 			$id = (int) $this->getState($this->getName() . '.id');
 			
+			if ($id)
+				$data['id'] = $id;
+			
 			$delImage = isset($data['del_image']) ? $data['del_image'] : null;
 			
 			// Upload thumb
@@ -525,10 +528,9 @@ class ContentModelArticle extends JModelAdmin
 				}
 			}
 			
-			if (parent::save($data))
-				return true;
-			else
-				die('error');
+			parent::save($data);
+			
+			return true;
 		}
 
 		return false;
@@ -607,15 +609,16 @@ class ContentModelArticle extends JModelAdmin
 		$oldImage = '';
 		$flagDelete = false;
 		
+		$item = $this->getItem();
+		
 		// if delete old image checked or upload new file
 		if ($delImage || $fileName)
-		{
-			$item = $this->getItem();
-			
+		{			
 			$oldImage = JPATH_ROOT . DS . str_replace('/', DS, $item->intro_images);
 			
 			// unlink file
-			@unlink($oldImage);
+			if (is_file($oldImage))
+				@unlink($oldImage);
 			
 			$flagDelete = true;
 			
